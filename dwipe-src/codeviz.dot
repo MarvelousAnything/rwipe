@@ -1,0 +1,102 @@
+digraph codeviz {
+    splines=true
+    sep="+15,15"
+    overlap=scalexy
+
+    node [shape=Mrecord, fontsize=12]
+
+    node [fillcolor="#ccccff", style=filled] "context.h"          [label = "context.h"]
+    node [fillcolor="#ff9999", style=filled] "device.c"           [label = "device.c"]
+    node [fillcolor="#ccccff", style=filled] "device.h"           [label = "device.h"]
+    node [fillcolor="#ff9999", style=filled] "dwipe.c"            [label = "dwipe.c"]
+    node [fillcolor="#ccccff", style=filled] "dwipe.h"            [label = "dwipe.h"]
+    node [fillcolor="#ccccff", style=filled] "extern.h"           [label = "extern.h"]
+    node [fillcolor="#ff9999", style=filled] "gui.c"              [label = "gui.c"]
+    node [fillcolor="#ccccff", style=filled] "gui.h"              [label = "gui.h"]
+    node [fillcolor="#ccccff", style=filled] "identify.h"         [label = "identify.h"]
+    node [fillcolor="#ccccff", style=filled] "int64.h"            [label = "int64.h"]
+    node [fillcolor="#ff9999", style=filled] "isaac_rand.c"       [label = "isaac_rand.c"]
+    node [fillcolor="#ccccff", style=filled] "isaac_rand.h"       [label = "isaac_rand.h"]
+    node [fillcolor="#ccccff", style=filled] "isaac_standard.h"   [label = "isaac_standard.h"]
+    node [fillcolor="#ff9999", style=filled] "logging.c"          [label = "logging.c"]
+    node [fillcolor="#ccccff", style=filled] "logging.h"          [label = "logging.h"]
+    node [fillcolor="#ff9999", style=filled] "method.c"           [label = "method.c"]
+    node [fillcolor="#ccccff", style=filled] "method.h"           [label = "method.h"]
+    node [fillcolor="#ff9999", style=filled] "mt19937ar-cok.c"    [label = "mt19937ar-cok.c"]
+    node [fillcolor="#ccccff", style=filled] "mt19937ar-cok.h"    [label = "mt19937ar-cok.h"]
+    node [fillcolor="#ff9999", style=filled] "options.c"          [label = "options.c"]
+    node [fillcolor="#ccccff", style=filled] "options.h"          [label = "options.h"]
+    node [fillcolor="#ff9999", style=filled] "pass.c"             [label = "pass.c"]
+    node [fillcolor="#ccccff", style=filled] "pass.h"             [label = "pass.h"]
+    node [fillcolor="#ff9999", style=filled] "prng.c"             [label = "prng.c"]
+    node [fillcolor="#ccccff", style=filled] "prng.h"             [label = "prng.h"]
+    node [fillcolor="#ccccff", style=filled] "scsicmds.h"         [label = "scsicmds.h"]
+    node [fillcolor="#ccccff", style=filled] "utility.h"          [label = "utility.h"]
+
+    "context.h"          ->             "prng.h"
+    "device.c"           ->            "dwipe.h"
+    "device.c"           ->          "context.h"
+    "device.c"           ->           "method.h"
+    "device.c"           ->          "options.h"
+    "device.c"           ->         "identify.h"
+    "device.c"           ->         "scsicmds.h"
+    "dwipe.c"            ->            "dwipe.h"
+    "dwipe.c"            ->          "context.h"
+    "dwipe.c"            ->           "method.h"
+    "dwipe.c"            ->             "prng.h"
+    "dwipe.c"            ->          "options.h"
+    "dwipe.c"            ->           "device.h"
+    "dwipe.c"            ->          "logging.h"
+    "dwipe.c"            ->              "gui.h"
+    "dwipe.c"            ->    "mt19937ar-cok.c"
+    "dwipe.c"            ->       "isaac_rand.c"
+    "dwipe.c"            ->              "gui.c"
+    "dwipe.c"            ->          "options.c"
+    "dwipe.c"            ->           "device.c"
+    "dwipe.c"            ->             "pass.c"
+    "dwipe.c"            ->           "method.c"
+    "dwipe.c"            ->          "logging.c"
+    "dwipe.c"            ->             "prng.c"
+    "gui.c"              ->            "dwipe.h"
+    "gui.c"              ->          "context.h"
+    "gui.c"              ->           "method.h"
+    "gui.c"              ->             "prng.h"
+    "gui.c"              ->          "options.h"
+    "gui.c"              ->              "gui.h"
+    "gui.c"              ->             "pass.h"
+    "isaac_rand.c"       ->   "isaac_standard.h"
+    "isaac_rand.c"       ->       "isaac_rand.h"
+    "isaac_rand.h"       ->   "isaac_standard.h"
+    "logging.c"          ->            "dwipe.h"
+    "logging.c"          ->          "context.h"
+    "logging.c"          ->           "method.h"
+    "logging.c"          ->             "prng.h"
+    "logging.c"          ->          "options.h"
+    "logging.c"          ->          "logging.h"
+    "method.c"           ->            "dwipe.h"
+    "method.c"           ->          "context.h"
+    "method.c"           ->           "method.h"
+    "method.c"           ->             "prng.h"
+    "method.c"           ->          "options.h"
+    "method.c"           ->             "pass.h"
+    "method.c"           ->          "logging.h"
+    "mt19937ar-cok.c"    ->    "mt19937ar-cok.h"
+    "options.c"          ->            "dwipe.h"
+    "options.c"          ->          "context.h"
+    "options.c"          ->           "method.h"
+    "options.c"          ->             "prng.h"
+    "options.c"          ->          "options.h"
+    "options.c"          ->          "logging.h"
+    "pass.c"             ->            "dwipe.h"
+    "pass.c"             ->          "context.h"
+    "pass.c"             ->           "method.h"
+    "pass.c"             ->             "prng.h"
+    "pass.c"             ->          "options.h"
+    "pass.c"             ->             "pass.h"
+    "pass.c"             ->          "logging.h"
+    "prng.c"             ->            "dwipe.h"
+    "prng.c"             ->             "prng.h"
+    "prng.c"             ->          "logging.h"
+    "prng.c"             ->    "mt19937ar-cok.h"
+    "prng.c"             ->       "isaac_rand.h"
+}
